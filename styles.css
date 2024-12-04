@@ -1,0 +1,61 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.outline {
+    height: 500px;
+    width: 400px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.menu {
+   border-bottom: 1px solid black;
+   width: 100%;
+   height: 10%;
+}
+
+.log {
+    background-color: #FAF9F6;
+    width: 100%;
+    height: 25%;
+    border-bottom: 1px solid black;
+}
+
+.screen {
+    width: 100%;
+    height: 15%;
+    border-bottom: 1px solid black;
+}
+
+.buttons {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    flex-direction: column-reverse;
+}
+
+.keys {
+    border-radius: 10px;
+    width: 20%;
+    height: 20%;
+}
+
+.equal {
+    background-color: #E97451;
+    border-radius: 10px;
+    width: 20%;
+    height: 40%;
+    color: white;
+}
