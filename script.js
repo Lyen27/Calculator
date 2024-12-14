@@ -1,5 +1,6 @@
 "use strict"
 const screen = document.querySelector('.screen')
+const log = document.querySelector('.log')
 const buttons = document.querySelector('.buttons')
 const text = ['=', '√', 'Pi', '+', '-', 'x', '÷', 'mod', '%', '.', '0', '1', '2', '3', '8', '7', '6', '5', '4', '9', 'C']
 const num = '.0123456789Pi√%'
@@ -27,7 +28,10 @@ function createKey() {
         if (index !== 0 && index !== 20) {
             item.addEventListener('click', () => {
                 if (num.includes(item.textContent) && op[0] === '') {
-                    if(a.includes('.') && item.textContent === '.') {
+                    if (a.includes('.') && item.textContent === '.') {
+                        return;
+                    }
+                    if (a.length >= 26) {
                         return;
                     }
                     a += item.textContent;
@@ -39,6 +43,7 @@ function createKey() {
                             b = a;
                         }
                         screen.textContent = operate(a, op[0], b);
+                        log.textContent = `${a} ${op[0]} ${b} = ${screen.textContent}`
                         a = screen.textContent;
                         op[0] = op[1];
                         b = '';
@@ -50,7 +55,10 @@ function createKey() {
                     if (b.length === 0) {
                         screen.textContent = '';
                     }
-                    if(b.includes('.') && item.textContent === '.') {
+                    if (b.length >= 26) {
+                        return;
+                    }
+                    if (b.includes('.') && item.textContent === '.') {
                         return;
                     }
                     b += item.textContent;
@@ -64,6 +72,7 @@ function createKey() {
             case 0:
                 item.addEventListener('click', () => {
                     screen.textContent = operate(a, op[0], b);
+                    log.textContent = `${a} ${op[0]} ${b} = ${screen.textContent}`
                     a = screen.textContent;
                     if (a === 'ERROR') {
                         a = '';
@@ -74,8 +83,9 @@ function createKey() {
                 })
                 break;
             case 20:
-                item.addEventListener('click',() => {
+                item.addEventListener('click', () => {
                     screen.textContent = '';
+                    log.textContent = '';
                     op[0] = '';
                     op[1] = '';
                     a = '';
@@ -106,7 +116,6 @@ function multiply(x, y) {
 
 function divide(x, y) {
     if (y === 0) {
-        a = '';
         b = '';
         op = ['', ''];
         return 'ERROR';
