@@ -43,7 +43,7 @@ function createKey() {
                             b = a;
                         }
                         screen.textContent = operate(a, op[0], b);
-                        log.textContent = `${a} ${op[0]} ${b} = ${screen.textContent}`
+                        log.textContent = `${a} ${op[0]} ${b} =`
                         if ( screen.textContent === 'ERROR') {
                             log.textContent = '';
                         }
@@ -78,7 +78,7 @@ function createKey() {
             case 0:
                 item.addEventListener('click', () => {
                     screen.textContent = operate(a, op[0], b);
-                    log.textContent = `${a} ${op[0]} ${b} = ${screen.textContent}`
+                    log.textContent = `${a} ${op[0]} ${b} =`
                     if (screen.textContent === 'ERROR') {
                         log.textContent = ''
                     }

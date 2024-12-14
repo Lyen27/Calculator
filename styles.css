@@ -18,7 +18,7 @@ body {
     width: 400px;
     border-radius: 10px;
     border-top: 5px solid #353935;
-    border-bottom: 20px solid #353935;
+    border-bottom: 20px solid #747e74;
     border-left: 8px solid #353935;
     border-right: 8px solid #353935;
     box-shadow: 0 0 15px;
@@ -36,11 +36,11 @@ body {
     align-items: center;
     background-color: #FAF9F6;
     width: 100%;
-    height: 25%;
+    height: 15%;
     border-top: 5px solid #76c2e6;
     border-bottom: 1px solid black;
     background-color: #e6ffff;
-    font-size: 30px;
+    font-size: 20px;
     font-family: digital,Arial;
 }
 
@@ -49,7 +49,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 15%;
+    height: 25%;
     border-bottom: 5px solid #72acc6;;
     text-align: center;
     background-color: #e6ffff;
