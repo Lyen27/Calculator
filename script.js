@@ -44,7 +44,13 @@ function createKey() {
                         }
                         screen.textContent = operate(a, op[0], b);
                         log.textContent = `${a} ${op[0]} ${b} = ${screen.textContent}`
+                        if ( screen.textContent === 'ERROR') {
+                            log.textContent = '';
+                        }
                         a = screen.textContent;
+                        if (a === 'ERROR') {
+                        a = '';
+                    }
                         op[0] = op[1];
                         b = '';
                     } else {
@@ -73,13 +79,15 @@ function createKey() {
                 item.addEventListener('click', () => {
                     screen.textContent = operate(a, op[0], b);
                     log.textContent = `${a} ${op[0]} ${b} = ${screen.textContent}`
+                    if (screen.textContent === 'ERROR') {
+                        log.textContent = ''
+                    }
                     a = screen.textContent;
                     if (a === 'ERROR') {
                         a = '';
                     }
                     b = '';
-                    op[0] = '';
-                    op[1] = '';
+                    op = ['', '']
                 })
                 break;
             case 20:
@@ -116,8 +124,7 @@ function multiply(x, y) {
 
 function divide(x, y) {
     if (y === 0) {
-        b = '';
-        op = ['', ''];
+        op = ['', '']
         return 'ERROR';
     }
     return `${x / y}`
