@@ -135,10 +135,22 @@ function mod(x, y) {
 }
 
 function operate(x, op, y) {
+    if (x === 'Pi') {
+        x = Math.PI;
+    }
+    if (y === 'Pi') {
+        y = Math.PI;
+    }
     if (x.includes('√')) {
+        if (x === '√Pi') {
+            x = `${Math.sqrt(Math.PI)}`
+        }
         x = `${Math.sqrt(+x.substring(1))}`;
     }
     if (y.includes('√')) {
+        if (y === '√Pi') {
+            y = `${Math.sqrt(Math.PI)}`
+        }
         y = `${Math.sqrt(+y.substring(1))}`;
     }
     if (x.includes('%')) {
@@ -146,12 +158,6 @@ function operate(x, op, y) {
     }
     if (y.includes('%')) {
         y = (+y.substring(0, y.length - 1)) / 100;
-    }
-    if (x === 'Pi') {
-        x = Math.PI;
-    }
-    if (y === 'Pi') {
-        y = Math.PI;
     }
     switch (op) {
         case '+':
